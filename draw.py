@@ -81,7 +81,7 @@ x, y, width, height = cv2.boundingRect(box)
 outside.append([x,y])
 cv2.rectangle(screen_bgr,(x,y),(x+width,y+height),(0,255,255),1)
 #获取灰色
-max_width=150
+max_width=50#这个值是防止上面的一小部分灰值干扰正常的放格，不要太大，不然随之方格变多，正常灰格会导致识别不了
 low_gray=np.array([0,0,46])
 upper_gray=np.array([180,43,220])
 gray_mask=cv2.inRange(screen_hsv,low_gray,upper_gray)
